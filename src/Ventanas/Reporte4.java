@@ -62,7 +62,8 @@ public class Reporte4 {
             Conexiones conn = new Conexiones();
             Connection cn = conn.conectar();
 
-            ps=cn.prepareStatement("SELECT auto.cve_auto, auto.placa FROM auto NATURAL INNER JOIN accidente WHERE accidente.FECHA < '2022-01-01' AND accidente.cve_auto = auto.cve_auto");
+            ps=cn.prepareStatement("SELECT auto.cve_auto, auto.placa FROM auto NATURAL INNER JOIN accidente WHERE " +
+                    "accidente.FECHA < '2022-01-01' AND accidente.cve_auto = auto.cve_auto");
             rs=ps.executeQuery();
 
             ResultSetMetaData rsm =rs.getMetaData();

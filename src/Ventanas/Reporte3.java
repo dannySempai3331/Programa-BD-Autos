@@ -65,7 +65,8 @@ public class Reporte3 {
             Conexiones conn = new Conexiones();
             Connection cn = conn.conectar();
 
-            ps=cn.prepareStatement("SELECT taller.NOMBRE FROM taller NATURAL INNER JOIN accidente WHERE taller.CVE_TALLER = accidente.CVE_TALLER GROUP BY(taller.NOMBRE)");
+            ps=cn.prepareStatement("SELECT taller.NOMBRE FROM taller NATURAL INNER JOIN accidente WHERE" +
+                    " taller.CVE_TALLER = accidente.CVE_TALLER GROUP BY(taller.NOMBRE)");
             rs=ps.executeQuery();
 
             ResultSetMetaData rsm =rs.getMetaData();
